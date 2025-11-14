@@ -1,13 +1,102 @@
-body{
-  width: 100vw;
-  height: 100vh;
-  background-color: rgb(128, 240, 169);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@font-face {
+  font-family: 'CustomFont';
+  src: url(./font/PPFragment-SerifRegular.otf);
 }
 
-p{
-  font-size: 3rem;
-  color: white;
+:root{
+  font-size: 62.5%; /* 62.5% of 16px = 10px */
+}
+
+body{
+  overflow-x: clip;
+  background-image: url(./src/6809ae9912d735da8f9b9b5769d92909.jpg);
+  margin-inline:1.4rem;
+  margin-block:1rem;
+}
+
+header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /* gap: 2rem; */
+  font-size: 1.4rem;
+}
+
+header>a{
+  color:rgb(0, 0, 0);
+  /* background-color: rgb(255, 255, 255); */
+  height: 4rem;
+  width: 5rem;
+  border: 0.1rem solid;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header>div{
+  display: flex;
+  gap: 0.4rem;
+}
+
+header>div>a{
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0);
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header>div>a:not(:nth-child(2)){
+  color: rgb(0, 0, 0);
+  background-color: rgba(255, 255, 255, 0);
+  border: 0.1rem solid rgb(0, 0, 0);
+  border-radius: 50%;
+}
+
+h1{
+  font-size: clamp(4rem, 10vw, 11rem);
+  font-weight: 600;
+  font-family: "CustomFont", serif;
+  line-height: 1.15;
+  color: #dfdfdf;
+  mix-blend-mode: difference;
+  margin-block: 2rem;
+}
+
+.date-author{
+  color: black;
+  font-size: 1.4rem;
+  margin-bottom: 2.8rem;
+}
+
+h2{
+  font-family: "CustomFont", serif;
+  line-height: 1.15;
+  font-size: clamp(2.4rem, 6vw, 8rem);
+  font-weight: 600;
+  /* color: rgb(189, 74, 17); */
+  margin-block: 3.6rem 1rem;
+  padding-inline-end: 4rem;
+}
+
+section p{
+  font-size: 1.6rem;
+  color: rgb(0, 0, 0);
+  margin-block: 1.4rem;
+}
+
+section a{
+  color: rgb(189, 74, 17);
+  text-decoration: underline;
+}
+
+footer{
+  font-size: 1.4rem;
+  color: rgb(0, 0, 0);
+  margin-block: 2.8rem;
 }
