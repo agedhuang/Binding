@@ -1,0 +1,13 @@
+body{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(128, 240, 169);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p{
+  font-size: 3rem;
+  color: white;
+}

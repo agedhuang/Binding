@@ -1,0 +1,13 @@
+body{
+  width: 100vw;
+  background-color: lightcoral;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+
+p{
+  font-size: 1rem;
+  color: white;
+}
