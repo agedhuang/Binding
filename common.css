@@ -56,7 +56,7 @@ ul li{
   align-items: center;
   justify-content: center;
   /* flex-grow: 1; */
-  border: black 0.5rem dotted;
+  border: black 0.2rem solid;
   border-radius: 100%;
 }
 
