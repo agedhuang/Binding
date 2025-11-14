@@ -93,7 +93,7 @@ section{
 }
 
 section p{
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   color: rgb(0, 0, 0);
   margin-block-end: 2.4rem;
   margin-inline-end: 3.4rem;
@@ -130,7 +130,7 @@ section a{
 } */
 
 footer{
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   color: rgb(0, 0, 0);
   margin-block: 2.8rem;
 }
