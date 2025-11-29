@@ -254,6 +254,7 @@ body:has(#intro-toggle:checked) > .website-intro{
   bottom: 0;
   z-index: 4;
   background-color: var(--intro-bg);
+  -webkit-backdrop-filter: blur(4rem);
   backdrop-filter: blur(4rem);
   mix-blend-mode: darken;
   width: 100vw;
@@ -309,6 +310,7 @@ body:has(#intro-toggle:checked) > .website-intro > *{
   margin-block: 6.4rem;
   color: var(--white);
   line-height: 1.25;
+  -webkit-backdrop-filter: blur(0.7rem);
   backdrop-filter: blur(0.7rem);
   position: relative;
   z-index: 1;
@@ -322,6 +324,7 @@ body:has(#intro-toggle:checked) > .website-intro > *{
   margin-block: 6.4rem;
   color: var(--white);
   line-height: 1.25;
+  -webkit-backdrop-filter: blur(0.7rem);
   backdrop-filter: blur(0.7rem);
   position: relative;
   z-index: 1;
