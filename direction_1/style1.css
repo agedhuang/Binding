@@ -137,7 +137,7 @@ header div.home-button {
   height: 74vh;
   width: 100%;
   background-color: var(--primary-color);
-  background-image: url(./src/egg.svg);
+  background-image: url(../src/egg.svg);
   overflow: clip;
   padding-block: 4rem;
   /* animation */
@@ -321,7 +321,7 @@ body:has(#intro-toggle:checked) > header > nav{
   width: 100vw;
   height: 100vh;
   height: 100dvh;
-  background-image: url(./src/egg.svg);
+  background-image: url(../src/egg.svg);
   transition: all 0.5s ease;
 }
 
