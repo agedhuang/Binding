@@ -620,7 +620,7 @@ body:has(#intro-toggle:checked) > .website-intro > *{
 
 /* article intro start-------- */
 .article-intro{
-  margin-block-start: 82vh;
+  margin-block-start: 80vh;
   margin-inline: calc(-1 * var(--page-padding-inline));
   position: sticky;
   top: calc(var(--nav-height) + var(--page-padding-block));
