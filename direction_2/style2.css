@@ -1,142 +1,678 @@
+@font-face {
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 400;
+  src: url(../font/Arial.ttf);
+}
+
+@font-face {
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 700;
+  src: url(../font/Arial\ Bold.ttf);
+}
+
+@font-face {
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 900;
+  src: url(../font/Arial\ Black.ttf);
+}
+
+@font-face {
+  font-family: "Confluence";
+  src: url(../font/Elbow\ Sans.ttf);
+}
+
+@font-face {
+  font-family: "Cooper Black";
+  src: url(../font/COOPBL.TTF);
+}
+
 :root{
   font-size: 62.5%; /* 62.5% of 16px = 10px */
+  --primary-color: #f2fd20;
+  --black:#181818;
+  --white:#FFF9F2;
+  --article-intro-text-color:#F2FFC2;
+  --intro-bg:#00384763;
+  --menu-list-grey: #2c2c2c;
+  --lihgtblue:#00aeff;
+  --article-theme-color-bg:#691747;
+  --article-darkegg-bg-color:#420029;
+  --article-theme-color-light:#FF3D3D;
+  --article-title-shadow-color:#840202;
+  --article-side-contrast-color:#E2FF3C;
+  --page-padding-block: 2rem;
+  --page-padding-inline: 1.4rem;
+  --text-outside-stroke: 0.1rem;
+  --nav-height: 4rem;
+  --home-button-width:11rem;
 }
 
-body{
-  /* width: 100vw; */
-  overflow-x: clip;
-  background-color: rgb(255, 255, 255);
-  margin-inline: 1.4rem;
-  margin-block-start:1rem;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+html{
+  background-color: var(--article-theme-color-bg);
+  overflow-y: auto;
 }
 
-header{
+body {
+  width: 100vw;
+  min-height: 100vh; 
+  min-height: 100dvh;
+  background-color: var(--article-theme-color-bg);
+  padding-inline: var(--page-padding-inline);
+  padding-block-start: var(--page-padding-block);
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+/* Header style start_______ */
+
+header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 2rem;
-  font-size: 1.4rem;
+  width: 100%;
+  font-size: 2.2rem;
+  font-family: "Cooper Black";
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-block: var(--page-padding-block);
+  padding-inline: var(--page-padding-inline);
+  z-index: 7;
 }
 
-header>a{
-  color:rgb(29, 76, 215);
-  background-color: rgb(255, 255, 255);
-  height: 4rem;
-  width: 5rem;
-  border: 0.1rem solid;
-  border-radius: 50%;
+header nav {
   display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-header>div{
-  display: flex;
-  gap: 0.4rem;
-}
-
-header>div>a{
-  color: rgb(255, 255, 255);
-  background-color: rgb(29, 76, 215);
-  height: 4rem;
-  width: 4rem;
-  border: 0.1rem solid;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-header>div>a:not(:first-child){
-  color: rgb(29, 76, 215);
-  background-color: rgb(255, 255, 255);
-  border: 0.1rem solid rgb(29, 76, 215);
-  border-radius: 50%;
-}
-
-h1{
-  font-size: clamp(4rem, 10vw, 11rem);
-  font-weight: 600;
-  color: rgb(29, 76, 215);
-  margin-block: 2.8rem;
+  flex-direction: row;
+  gap: 0;
   position: relative;
-  padding-block: 2rem;
+  z-index: 3;
+  transform: scaleY(1);
+  transition: transform 0.5s ease 0.5;
 }
 
-h1::after{
-  content: "";
-  display: block;
-  border: 3rem dotted rgb(142, 228, 140);
-  border-radius: 50%;
+header div.home-button {
+  background-color: var(--white);
+  width: var(--home-button-width);
+  height: var(--nav-height);
+  border-radius: 7rem;
+  border: var(--black) 0.1rem solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+  /* Text outside stroke */
+  text-shadow:
+    -0.1rem -0.1rem 0 black,
+    0.1rem -0.1rem 0 black,
+    -0.1rem 0.1rem 0 black,
+    0.1rem 0.1rem 0 black,
+    0 -0.1rem 0 black,
+    0 0.1rem 0 black,
+    -0.1rem 0 0 black,
+    0.1rem 0 0 black;
+}
+
+/* menu start here_____ */
+
+.menu {
+  background-color: var(--primary-color);
+  width: 40vw;
+  height: var(--nav-height);
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.4rem;
+  border: var(--black) 0.1rem solid;
+}
+
+.menu-list {
   position: absolute;
-  inset: 0;
-  transform: rotate(15deg);
-  mix-blend-mode: multiply;
-
+  top: var(--nav-height);
+  height: 74vh;
+  width: 100%;
+  background-color: var(--primary-color);
+  background-image: url(../src/egg.svg);
+  overflow: clip;
+  padding-block: 4rem;
+  /* animation */
+  transform: scaleY(1);
+  transform-origin: top;
+  transition: transform 0.3s ease;
+  border: var(--black) 0.1rem solid;
 }
 
-.date-author{
-  font-size: 1.4rem;
-  color: rgb(164, 57, 143);
+#menu-toggle:checked + .menu-list {
+  transform: scaleY(0);
 }
 
-h2{
-  font-size: 2.8rem;
+#menu-toggle:checked + .menu-list ul{
+  opacity: 0;
+}
+
+.menu-list ul{
+  display: flex;
+  padding-inline: 3.5vh;
+  height: 100%;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  z-index: 2;
+  opacity: 1;
+  /* I make the text show up later than bg */
+  transition: opacity 0.5s ease 0.3s;
+}
+
+.menu-list li{
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.menu-list li div{
+  display: inline-block;
+  width: fit-content;
+  background-color: var(--primary-color);
+  color: var(--menu-list-grey);
+}
+
+.menu-number {
+  font-size: 4rem;
+  font-family: "Confluence";
+}
+
+.menu-title {
+  font-size: 2.6rem;
+  font-family: "cooper black";
+}
+
+/* When the menu show, other stuff blur */
+body:has(#menu-toggle:not(:checked)) > h1 {
+  filter: blur(5px);
+}
+
+body:has(#menu-toggle) > h1 {
+  transition: filter 0.3s ease;
+}
+
+/* Menu end here_________ */
+
+header .eggs-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  font-family: "Arial";
+  font-weight: 700;
+  color: var(--primary-color);
+  /* So many layer in here, I have to figure it out with chrome  inspect tool*/
+  z-index: 7;
+}
+
+header .eggs-container span {
+  position: absolute;
+  font-size: 0;
+}
+
+header .eggs-container span::before {
+  content: "?";
+  font-size: 2.2rem;
+}
+
+body:has(#intro-toggle:not(:checked)) .eggs-container span::before {
+  content: "x";
+}
+
+header .eggs-container #top-right {
+  height: 4.2rem;
+}
+
+/* change egg's svg style */
+header .eggs-container #top-right path {
+  fill: var(--black);
+  stroke: var(--primary-color);
+  stroke-width: 0.1rem;
+}
+
+/* Header style end_______ */
+ 
+
+
+
+
+
+
+/* website introduce start____________ */
+
+body:has(#intro-toggle:checked) > .intro-backdrop{
+  top:-100vh;
+  visibility: hidden;
+}
+
+body:has(#intro-toggle:checked) > .intro-pattern{
+  top:-100vh;
+  visibility: hidden;
+}
+
+body:has(#intro-toggle:checked) > .website-intro{
+  top:-100vh;
+  visibility: hidden;
+}
+
+body:has(#intro-toggle:not(:checked)) .menu-list{
+  transform: scaleY(0);
+} 
+
+body:has(#intro-toggle:not(:checked)) nav{
+  transform: scaleY(0);
+  transition: transform 0.4s ease 0.4s;
+}
+
+body:has(#intro-toggle:checked) > header > nav{
+  transform: scaleY(1);
+  transition: transform 0.4s ease;
+}
+
+
+.intro-backdrop{
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 4;
+  -webkit-backdrop-filter: blur(4rem);
+  backdrop-filter: blur(4rem);
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  margin: 0; 
+  padding: 0; 
+  transition: all 0.5s ease;
+}
+
+/* backdrop-filter and mix-blend-mode can not be together in the same element. so I seperate them */
+.intro-backdrop::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--intro-bg);
+  mix-blend-mode: darken;
+  pointer-events: none;
+}
+
+.intro-pattern {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background-image: url(../src/egg.svg);
+  transition: all 0.5s ease;
+}
+
+.website-intro{
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 6;
+  margin: 0; 
+  padding: 0; 
+  overflow-y: auto;
+  font-size: 2rem;
+  color: var(--primary-color);
+  padding-block-start: var(--page-padding-block);
+  padding-inline: calc(2*var(--page-padding-inline));
+  transition: all 0.5s ease;
+}
+
+.website-intro > *{
+  opacity: 1;
+  transition: opacity 0.4s ease 0.5s;
+}
+
+body:has(#intro-toggle:checked) > .website-intro > *{
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.website-intro > div{
+  width: fit-content;
+  margin-block: 3.4rem;
+  color: var(--white);
+  line-height: 1.4;
+  -webkit-backdrop-filter: blur(0.7rem);
+  backdrop-filter: blur(0.7rem);
+  position: relative;
+  z-index: 1;
+  font-family: "Arial";
+  font-weight: 400;
+  font-size: 2.15rem;
+}
+
+.website-intro > p{
+  width: fit-content;
+  margin-block: 3.4rem;
+  color: var(--white);
+  line-height: 1.4;
+  -webkit-backdrop-filter: blur(0.7rem);
+  backdrop-filter: blur(0.7rem);
+  position: relative;
+  z-index: 1;
+  font-family: "Arial";
+  font-weight: 400;
+  font-size: 2.15rem;
+}
+
+.website-intro h2{
+  font-size: clamp(8rem, 20vw, 20rem);
+  font-family: "Confluence";
   line-height: 1;
-  /* color: rgb(150, 54, 239); */
-  margin-block-start: 2.4rem;
-  padding-block-end: 1rem;
-  border-bottom: 2px solid ;
+  color: var(--primary-color);
+  margin-block: 4rem;
+  text-shadow:
+    /* Outline Stroke */
+    -0.1rem -0.1rem 0 var(--black),
+    0.1rem -0.1rem 0 var(--black),
+    -0.1rem 0.1rem 0 var(--black),
+    0.1rem 0.1rem 0 var(--black),
+    0 -0.1rem 0 var(--black),
+    0 0.1rem 0 var(--black),
+    -0.1rem 0 0 var(--black),
+    0.1rem 0 0 var(--black),
+    /* Shadow under texts */
+    0 0.6rem 0 var(--lihgtblue); 
 }
 
-p{
-  font-size: 1.6rem;
+.website-intro a{
+  color: var(--black);
+  background-color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.website-intro blockquote{
+  font-size: clamp(2.8rem, 6vw, 8rem);
+  font-family: "Arial";
+  font-weight: 700;
+  margin-block: 4rem;
+  text-wrap: balance;
+  color: var(--primary-color);
+  line-height: 1.35;
+}
+
+/* Colophon here!-------------- */
+.colophon{
+  margin-block-start: 8rem;
+}
+
+.colophon > span{
+  font-family: "Confluence";
+  font-size: clamp(6rem, 16vw, 20rem);
+}
+
+.Typeface-and-Credits{
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  width: 100%;
+  font-size: 2rem;
+  font-family: 'Arial';
+}
+
+.Typeface-and-Credits > li{
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: start;
+}
+
+.type-list{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: var(--white);
+}
+
+.Colophon-title{
+  white-space: pre-line;
+  /* Make the title take the same space so the type-list and name can align */
+  width: 50%;
+  flex-shrink: 0;
+  font-weight: 700;
+}
+
+.Footer-Logo{
+  display: block;
+  font-size: clamp(15rem, 42vw, 80rem);
+  font-family: 'Confluence';
+  color: var(--primary-color);
+  margin-block-end: clamp(-5rem, -6vw, -2rem);
+  text-shadow:
+    /* Outline Stroke */
+    -0.1rem -0.1rem 0 var(--black),
+    0.1rem -0.1rem 0 var(--black),
+    -0.1rem 0.1rem 0 var(--black),
+    0.1rem 0.1rem 0 var(--black),
+    0 -0.1rem 0 var(--black),
+    0 0.1rem 0 var(--black),
+    -0.1rem 0 0 var(--black),
+    0.1rem 0 0 var(--black),
+    /* Shadow under texts */
+    0 0.6rem 0 var(--lihgtblue); 
+}
+
+.Footer-Credits{
+  font-family: 'Arial';
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  display: flex;
+  justify-content: space-between;
+  margin-block: 2rem;
+}
+
+/* website introduce end____________ */
+
+
+/* For Nav Bar */
+/* Copy All Above-------------------- */
+
+
+
+
+/* Main Article style from here */
+
+/* top H2 strart--------------  */
+.main-article {
+  margin-block-start: calc(var(--nav-height) + 2.6rem);
+
+}
+
+.title-layer {
+  position: fixed;
+  left: 0;
+  height: 70vh;
+  padding-inline: var(--page-padding-inline);
+}
+
+.title-layer > h2 {
+  display: flex;
+  color: var(--primary-color);
+  align-items: center;
+}
+
+.title-layer > h2 >div:first-child{
+  font-family: 'Confluence';
+  font-size: clamp(6rem, 16vw, 20rem);
+  /* Text Box trim! */
+  text-box: trim-both cap alphabetic;
+  width: var(--home-button-width);
+  flex-shrink: 0;
+}
+
+.title-layer > h2 >div:last-child{
+  font-family: 'Cooper Black';
+  font-size: clamp(2.2rem, 6vw, 7rem);
+  font-weight: 700;
+}
+
+/* top H2 end--------------  */
+
+/* Article Title start-------------- */
+.article-title{
+  margin-block-start: 4rem;
+  color: var(--article-theme-color-light);
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  height: 58vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title-border{
+  display: flex;
+  justify-content: space-between;
+}
+
+.title-border > div{
+  width: 40%;
+  height: 1.2rem;
+}
+
+.title-border > div:first-child{
+  background-color: var(--article-theme-color-light);
+  border-radius: 8rem;
+}
+
+.title-border > div:last-child{
+  background-color: var(--article-side-contrast-color);
+}
+
+#title-bottom-border{
+  transform: scaleX(-1);
+}
+
+.article-title > h1{
+  font-size: clamp(3rem, 10vw, 20rem);
+  font-family: "Arial";
+  font-weight: 900;
   line-height: 1.3;
-  margin-block-end: 1.4rem;
+  text-align: center;
+  text-shadow:
+    /* Outline Stroke */
+    -0.05rem -0.05rem 0 var(--black),
+    0.05rem -0.05rem 0 var(--black),
+    -0.05rem 0.05rem 0 var(--black),
+    0.05rem 0.05rem 0 var(--black),
+    0 -0.05rem 0 var(--black),
+    0 0.05rem 0 var(--black),
+    -0.05rem 0 0 var(--black),
+    0.05rem 0 0 var(--black),
+    /* Shadow under texts */
+    0 0.4rem 0 var(--article-title-shadow-color); 
+  margin-block-start: 4rem;
+  margin-block-end: 2.4rem;
+  text-wrap: balance;
 }
 
-section {
-  border: 0.3rem dotted ;
-  border-radius: 50%;
-  margin-block-end: 2rem;
+.darkegg-bg {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  height: 100%;
+  z-index: -1;
 }
 
-section P{
-  padding-inline-start: 2.8rem;
+.darkegg-bg > path{
+  fill: var(--article-darkegg-bg-color);
+  stroke: var(--article-theme-color-light);
+  stroke-width: 0.1;
 }
 
-#section1{
-  color: rgb(69, 196, 100);
-
+.date-author {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--article-theme-color-light);
+  font-size: 2rem;
+  font-family: 'Arial';
+  font-weight: 400;
+  padding-block-end: 2rem;
 }
 
-#section2{
-  color: rgb(214, 122, 52);
-}
+/* article-title end here--------------- */
 
-#section3{
-  color: rgb(95, 88, 231);
-}
-
-#section4{
-  color: rgb(223, 78, 163);
-}
-
-#section5{
-  color: rgb(69, 196, 100);
-}
-
-#section6{
-  color: rgb(214, 122, 52);
-}
-
-footer {
-  font-size: 1.4rem;
-  color:  rgb(31, 11, 113);
-  /* border: 0.2rem dotted; */
-  /* border-radius: 50%; */
+/* article intro start-------- */
+.article-intro{
+  margin-block-start: 78vh;
+  margin-inline: calc(-1 * var(--page-padding-inline));
+  position: sticky;
+  top: calc(var(--nav-height) + var(--page-padding-block));
+  border-top-left-radius: 3rem;
+  border-top-right-radius: 3rem;
+  background-color: var(--article-theme-color-light);
+  padding-inline: var(--page-padding-inline);
+  padding-block-start: var(--page-padding-block);
+  padding-block-end: calc(var(--page-padding-block) + 6rem);
+  margin-block-end: -5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 
+
+.article-intro .small-egg{
+  width: 3rem;
+  margin-block: 2rem;
+}
+
+.article-intro .small-egg path{
+  fill: var(--article-intro-text-color);
+}
+
+.article-intro p{
+  font-size: 2.4rem;
+  font-family: 'Arial';
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 0.3rem;
+  color: var(--article-intro-text-color);
+  line-height: 1.3;
+}
+/* article intro end-------- */
+
+
+.article-content{
+  background-color: var(--white);
+  height: 220rem;
+  position: relative;
+  z-index: 1; 
+  margin-inline: calc(-1 * var(--page-padding-inline));
+  padding-inline: var(--page-padding-inline);
+  border-top-left-radius: 3rem;
+  border-top-right-radius: 3rem;
+  padding-block: 4rem;
+}
