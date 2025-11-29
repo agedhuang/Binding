@@ -61,6 +61,9 @@ body {
   flex-direction: column;
 }
 
+
+
+
 /* Header style start_______ */
 
 header {
@@ -71,7 +74,12 @@ header {
   width: 100%;
   font-size: 2.2rem;
   font-family: "Cooper Black";
-  margin-block-end: 1.6rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-block: var(--page-padding-block);
+  padding-inline: var(--page-padding-inline);
+  z-index: 7;
 }
 
 header nav {
@@ -80,6 +88,8 @@ header nav {
   gap: 0;
   position: relative;
   z-index: 3;
+  transform: scaleY(1);
+  transition: transform 0.5s ease 0.5;
 }
 
 header div.home-button {
@@ -230,6 +240,11 @@ header .eggs-container #top-right path {
 /* Header style end_______ */
  
 
+
+
+
+
+
 /* website introduce start____________ */
 
 body:has(#intro-toggle:checked) > .intro-backdrop{
@@ -246,6 +261,21 @@ body:has(#intro-toggle:checked) > .website-intro{
   top:-100vh;
   visibility: hidden;
 }
+
+body:has(#intro-toggle:not(:checked)) .menu-list{
+  transform: scaleY(0);
+} 
+
+body:has(#intro-toggle:not(:checked)) nav{
+  transform: scaleY(0);
+  transition: transform 0.4s ease 0.4s;
+}
+
+body:has(#intro-toggle:checked) > header > nav{
+  transform: scaleY(1);
+  transition: transform 0.5s ease;
+}
+
 
 .intro-backdrop{
   display: block;
@@ -351,7 +381,7 @@ body:has(#intro-toggle:checked) > .website-intro > *{
 .website-intro h2{
   font-size: clamp(8rem, 20vw, 20rem);
   font-family: "Confluence";
-  line-height: 0.9;
+  line-height: 1;
   color: var(--primary-color);
   margin-block: 4rem;
   text-shadow:
@@ -455,9 +485,14 @@ body:has(#intro-toggle:checked) > .website-intro > *{
   margin-block: 2rem;
 }
 
+/* website introduce end____________ */
+
+
+
 
 /* h1 and image egg start---------- */
 h1{
+  margin-block-start: calc(1.4*var(--nav-height));
   overflow: clip;
   flex-grow: 1;
   display: flex;
