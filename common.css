@@ -120,7 +120,7 @@ header div.home-button {
 .menu-list {
   position: absolute;
   top: var(--nav-height);
-  height: 80vh;
+  height: 70vh;
   width: 100%;
   background-color: var(--primary-color);
   background-image: url(./src/egg.svg);
@@ -150,7 +150,7 @@ header div.home-button {
   align-items: start;
   z-index: 2;
   opacity: 1;
-  /* I make the text come later than bg */
+  /* I make the text show up later than bg */
   transition: opacity 0.5s ease 0.3s;
 }
 
