@@ -259,6 +259,7 @@ body:has(#intro-toggle:checked) > .website-intro{
   backdrop-filter: blur(4rem);
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   margin: 0; 
   padding: 0; 
   transition: all 0.5s ease;
@@ -286,6 +287,7 @@ body:has(#intro-toggle:checked) > .website-intro{
   z-index: 5;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   background-image: url(./src/egg.svg);
   transition: all 0.5s ease;
 }
@@ -320,30 +322,30 @@ body:has(#intro-toggle:checked) > .website-intro > *{
 
 .website-intro > div{
   width: fit-content;
-  margin-block: 7rem;
+  margin-block: 3.4rem;
   color: var(--white);
-  line-height: 1.25;
+  line-height: 1.4;
   -webkit-backdrop-filter: blur(0.7rem);
   backdrop-filter: blur(0.7rem);
   position: relative;
   z-index: 1;
   font-family: "Arial";
   font-weight: 400;
-  font-size: 2rem;
+  font-size: 2.1rem;
 }
 
 .website-intro > p{
   width: fit-content;
   margin-block: 3.4rem;
   color: var(--white);
-  line-height: 1.25;
+  line-height: 1.4;
   -webkit-backdrop-filter: blur(0.7rem);
   backdrop-filter: blur(0.7rem);
   position: relative;
   z-index: 1;
   font-family: "Arial";
   font-weight: 400;
-  font-size: 2rem;
+  font-size: 2.1rem;
 }
 
 .website-intro h2{
@@ -351,6 +353,7 @@ body:has(#intro-toggle:checked) > .website-intro > *{
   font-family: "Confluence";
   line-height: 0.9;
   color: var(--primary-color);
+  margin-block: 4rem;
   text-shadow:
     /* Outline Stroke */
     -0.1rem -0.1rem 0 var(--black),
@@ -375,11 +378,10 @@ body:has(#intro-toggle:checked) > .website-intro > *{
   font-size: clamp(2.8rem, 6vw, 8rem);
   font-family: "Arial";
   font-weight: 700;
-  margin-block: 2.8rem;
-  text-align: center;
+  margin-block: 4rem;
   text-wrap: balance;
   color: var(--primary-color);
-  line-height: 1.25;
+  line-height: 1.35;
 }
 
 /* Colophon here!-------------- */
