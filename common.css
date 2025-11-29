@@ -51,6 +51,7 @@ html{
 
 body {
   width: 100vw;
+  height: 100vh; 
   height: 100dvh;
   background-color: var(--bg-color-bottom);
   background-image: linear-gradient(to bottom, var(--bg-color-top) 20%, var(--bg-color-bottom));
@@ -120,7 +121,7 @@ header div.home-button {
 .menu-list {
   position: absolute;
   top: var(--nav-height);
-  height: 75vh;
+  height: 74vh;
   width: 100%;
   background-color: var(--primary-color);
   background-image: url(./src/egg.svg);
