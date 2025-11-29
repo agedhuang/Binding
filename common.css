@@ -319,7 +319,7 @@ body:has(#intro-toggle:checked) > .website-intro > *{
 
 .website-intro > div{
   width: fit-content;
-  margin-block: 6.4rem;
+  margin-block: 7rem;
   color: var(--white);
   line-height: 1.25;
   -webkit-backdrop-filter: blur(0.7rem);
@@ -333,7 +333,7 @@ body:has(#intro-toggle:checked) > .website-intro > *{
 
 .website-intro > p{
   width: fit-content;
-  margin-block: 6.4rem;
+  margin-block: 3.4rem;
   color: var(--white);
   line-height: 1.25;
   -webkit-backdrop-filter: blur(0.7rem);
@@ -477,11 +477,12 @@ h1{
 
 h1 span:first-child {
   display: block;
+  height: fit-content;
   font-size: clamp(8rem, 26vw, 18rem);
   font-family: "Cooper Black";
   line-height: 0.9;
   color: var(--primary-color);
-  margin-block-end: -8rem;
+  margin-block-end: -4rem;
 }
 
 h1 img{
@@ -493,10 +494,11 @@ h1 img{
 
 h1 span:last-child {
   display: block;
+  height: fit-content;
   font-size: clamp(15rem, 44vw, 80rem);
   font-family: "Confluence";
   color: var(--primary-color);
-  margin-block-start: -12rem;
+  margin-block-start: -8rem;
   margin-block-end: clamp(-5rem, -6vw, -2rem);
 }
 
