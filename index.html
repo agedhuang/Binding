@@ -3,23 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="reset.css">
-  <link rel="stylesheet" href="common.css">
-
+  <style>
+    @import "reset.css" layer(reset);
+    @import "common.css" layer(landing);
+  </style>
   <title>Binding</title>
 </head>
 <body>
-  <h1>Design for All</h1>
-  <h2>A manifesto for a design world with no expiration dates, no exclusive clubs, and no rigid boundaries.</h2>
-  <div class="arrow">
-    <svg viewBox="0 0 8 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M3.32843 10.8069C3.52369 11.0021 3.84028 11.0021 4.03554 10.8069L7.21752 7.62488C7.41278 7.42962 7.41278 7.11304 7.21752 6.91777C7.02226 6.72251 6.70567 6.72251 6.51041 6.91777L3.68198 9.7462L0.853557 6.91777C0.658295 6.72251 0.341712 6.72251 0.14645 6.91777C-0.0488121 7.11304 -0.0488121 7.42962 0.14645 7.62488L3.32843 10.8069ZM3.68198 0H3.18198V10.4533H3.68198H4.18198V0H3.68198Z" fill="black"/>
-    </svg>
-  </div>
-  <ul>
-    <li><a href="./direction_1/index.html">For Every Generation</a></li>
-    <li><a href="./direction_2/index.html">By Every Thinker</a></li>
-    <li><a href="./direction_3/index.html">Across Every Medium</a></li>
-  </ul>
+  <header>
+    <nav>
+      <div class="home-button"><a href="./index.html">Home</a></div>
+      <label for="menu-toggle" class="menu">Menu</label>
+      <input type="checkbox" id="menu-toggle" checked>
+      <div class="menu-list">
+        <ul>
+          <li>
+            <div class="menu-number">01</div>
+            <div class="menu-title">For Every Generation</div>
+          </li>
+          <li>
+            <div class="menu-number">02</div>
+            <div class="menu-title">By Every Thinker</div>
+          </li>
+          <li>
+            <div class="menu-number">03</div>
+            <div class="menu-title">Across Every Medium</div>
+          </li>
+        </ul>
+        <div class="menu-list-bg"></div>
+      </div>
+    </nav>
+    <label for="intro-toggle" class="eggs-container ">
+      <span></span>
+      <svg class="egg" id="top-right"  viewBox="0 0 33 44" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16.2679 0.00584389C21.517 0.00584389 25.8971 4.10561 28.4898 8.98665C31.1738 14.0396 32.5358 20.3225 32.5358 25.3043C32.5358 35.1314 25.195 43.9785 16.2679 43.9785C7.50724 43.9785 7.07189e-06 35.1314 0 25.3043C0 20.3225 1.36207 14.0396 4.04606 8.98665C6.63875 4.1056 11.0188 0.00584389 16.2679 0.00584389Z"/>
+      </svg>
+    </label>
+    <input type="checkbox" id="intro-toggle" style="display: none;" checked >
+    
+  </header>
+
+  <h1>
+    <span>Design for</span>
+    <img src="./src/egg.webp" alt="huge egg photo with colorful sticker on it">
+    <span>All</span>
+  </h1>
+
+  <!-- Intro Section -->
+  <div class="intro-backdrop"> </div>
+  <div class="intro-pattern"></div> 
+  <article class="website-intro">
+    <h2>Design for All</h2>
+    <!-- sice there is link inside, I can't use <p> -->
+    <div>
+      In the philosophy of <a href="https://youtu.be/h6fcK_fRYaI?si=3V6jbByfuOYzOTfH" target="_blank">"The Egg"</a> , the universe is revealed to be a single soul living every human life. Every stranger is simply you in a different time, facing different circumstances. If we view design through this lens, the barrier between "us" and "them" dissolves.
+    </div>
+    <blockquote>
+      Design for All is not just charity; it is an act of radical empathy towards ourselves.
+    </blockquote>
+    <p>When we design for the aging (Article 1), we are simply preparing the world for our future selves. When we democratize design thinking (Article 2), we are acknowledging that creativity is a shared consciousness, not an exclusive privilege. And when we break the boundaries of our professional titles (Article 3), we refuse to limit the infinite potential of who we can become.</p>
+    <p>We are the user, the maker, and the medium. To design for one is to design for the whole. </p>
+    <p>Welcome to the hatching.</p>
+
+    <footer class="colophon">
+      <span>----------</span>
+      <ul class="Typeface-and-Credits">
+        <li>
+          <div class="Colophon-title">Typeface</div>
+          <div class="type-list">
+            <p style="font-family:'Confluence';">Confluence</p>
+            <p style="font-family: 'Cooper Black';">Cooper Black</p>
+            <p style="font-family: 'Arial';">Arial</p>
+          </div>
+        </li>
+        <li>
+          <div class="Colophon-title">Webiste design 
+              and developed by
+          </div>
+          <div class="type-list">Cason Huang</div>
+        </li>
+      </ul>
+      <span>----------</span>
+      <div class="Footer-Logo">ALL</div>
+      <div class="Footer-Credits">
+        <div>©Cason Huang</div>
+        <div>T&I @Parsons</div>
+      </div>
+    </footer>
+  </article>
 </body>
 </html>

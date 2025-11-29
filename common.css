@@ -1,81 +1,485 @@
+@font-face {
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 400;
+  src: url(./font/Arial.ttf);
+}
+
+@font-face {
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 700;
+  src: url(./font/Arial\ Bold.ttf);
+}
+
+@font-face {
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 900;
+  src: url(./font/Arial\ Black.ttf);
+}
+
+@font-face {
+  font-family: "Confluence";
+  src: url(./font/Elbow\ Sans.ttf);
+}
+
+@font-face {
+  font-family: "Cooper Black";
+  src: url(./font/COOPBL.TTF);
+}
+
 :root{
   font-size: 62.5%; /* 62.5% of 16px = 10px */
+  --primary-color: #f2fd20;
+  --bg-color-top: #0099E0;
+  --bg-color-bottom: #ABE7FF;
+  --black:#181818;
+  --white:#FFFFFF;
+  --intro-bg:#00384763;
+  --menu-list-grey: #2c2c2c;
+  --lihgtblue:#00aeff;
+  --page-padding-block: 2rem;
+  --page-padding-inline: 1rem;
+  --text-outside-stroke: 0.1rem;
+  --nav-height: 4rem;
 }
 
 body {
-  margin: 1.5rem;
-  background-color: rgb(255, 255, 255);
+  width: 100vw;
   height: 100vh;
+  background-image: linear-gradient(to bottom, var(--bg-color-top) 20%, var(--bg-color-bottom));
+  padding-inline: var(--page-padding-inline);
+  padding-block-start: var(--page-padding-block);
   display: flex;
   flex-direction: column;
-  padding-block: 1.4rem;
+}
+
+/* Header style start_______ */
+
+header {
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
-}
-  
-h1{
-  color: rgb(0, 0, 0);
-  font-size: clamp(5rem, 16vw, 11rem);
-  background-color: rgb(255, 255, 255);
-  padding-inline: clamp(3rem, 5vw, 11rem);
-  /* height: 50vh; */
-  line-height: 1;
-  text-align: center;
+  align-items: center;
+  width: 100%;
+  font-size: 2.2rem;
+  font-family: "Cooper Black";
+  margin-block-end: 1.6rem;
 }
 
-h2{
-  font-size: clamp(2.4rem, 4vw, 8rem);
+header nav {
   display: flex;
-  justify-content: center;
-  text-align: center;
+  flex-direction: row;
+  gap: 0;
+  position: relative;
+  z-index: 3;
 }
 
-.arrow{
-  height: 5rem;
-  background-color: rgb(255, 255, 255);
+header div.home-button {
+  background-color: var(--white);
+  width: 11rem;
+  height: var(--nav-height);
+  border-radius: 7rem;
+  border: var(--black) 0.1rem solid;
   display: flex;
   align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+  /* Text outside stroke */
+  text-shadow:
+    -0.1rem -0.1rem 0 black,
+    0.1rem -0.1rem 0 black,
+    -0.1rem 0.1rem 0 black,
+    0.1rem 0.1rem 0 black,
+    0 -0.1rem 0 black,
+    0 0.1rem 0 black,
+    -0.1rem 0 0 black,
+    0.1rem 0 0 black;
 }
 
-.arrow svg{
+/* menu start here_____ */
+
+.menu {
+  background-color: var(--primary-color);
+  width: 40vw;
+  height: var(--nav-height);
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.4rem;
+  border: var(--black) 0.1rem solid;
+}
+
+.menu-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: var(--nav-height);
+  height: 88vh;
   width: 100%;
-  height: 80%;
-
+  background-color: var(--primary-color);
+  background-image: url(./src/egg.svg);
+  overflow: clip;
+  padding-block: 8rem;
+  padding-inline: 3rem;
+  /* animation */
+  transform: scaleY(1);
+  transform-origin: top;
+  transition: transform 0.3s ease;
 }
 
-ul{
+#menu-toggle:checked + .menu-list {
+  transform: scaleY(0);
+}
+
+#menu-toggle:checked + .menu-list ul{
+  opacity: 0;
+}
+
+.menu-list ul{
+  display: flex;
+  height: 100%;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  z-index: 2;
+  opacity: 1;
+  /* I make the text come later than bg */
+  transition: opacity 0.3s ease 0.3s;
+}
+
+.menu-list li{
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  gap: 1.4rem;
-  margin-inline: 3rem;
+  gap: 0.8rem;
 }
 
-ul li{
-  text-decoration: none;
-  color: black;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 2.4rem;
-  font-weight: 400;
-  padding-inline: 3rem;
-  padding-block: 1rem;
-  height: 8rem;
+.menu-list li div{
+  display: inline-block;
+  width: fit-content;
+  background-color: var(--primary-color);
+  color: var(--menu-list-grey);
+}
+
+.menu-number {
+  font-size: 5rem;
+  font-family: "Confluence";
+}
+
+.menu-title {
+  font-size: 3rem;
+  font-family: "cooper black";
+}
+
+/* When the menu show, other stuff blur */
+body:has(#menu-toggle:not(:checked)) > h1 {
+  filter: blur(5px);
+}
+
+body:has(#menu-toggle) > h1 {
+  transition: filter 0.3s ease;
+}
+
+/* Menu end here_________ */
+
+header .eggs-container {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 2.2rem;
+  font-family: "Arial";
+  font-weight: 700;
+  color: var(--primary-color);
+  /* So many layer in here, I have to figure it out with chrome  inspect tool*/
+  z-index: 7;
+}
+
+header .eggs-container span {
+  position: absolute;
+  font-size: 0;
+}
+
+header .eggs-container span::before {
+  content: "?";
+  font-size: 2.2rem;
+}
+
+body:has(#intro-toggle:not(:checked)) .eggs-container span::before {
+  content: "x";
+}
+
+header .eggs-container #top-right {
+  height: 4.2rem;
+}
+
+/* change egg's svg style */
+header .eggs-container #top-right path {
+  fill: var(--black);
+  stroke: var(--primary-color);
+  stroke-width: 0.1rem;
+}
+
+/* Header style end_______ */
+ 
+
+/* website introduce start____________ */
+
+body:has(#intro-toggle:checked) > .intro-backdrop{
+  top:-100vh;
+  visibility: hidden;
+}
+
+body:has(#intro-toggle:checked) > .intro-pattern{
+  top:-100vh;
+  visibility: hidden;
+}
+
+body:has(#intro-toggle:checked) > .website-intro{
+  top:-100vh;
+  visibility: hidden;
+}
+
+.intro-backdrop{
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 4;
+  background-color: var(--intro-bg);
+  backdrop-filter: blur(4rem);
+  mix-blend-mode: darken;
+  width: 100vw;
+  height: 100vh;
+  margin: 0; 
+  padding: 0; 
+  transition: all 0.5s ease;
+}
+
+.intro-pattern {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(./src/egg.svg);
+  transition: all 0.5s ease;
+}
+
+.website-intro{
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 6;
+  margin: 0; 
+  padding: 0; 
+  overflow-y: auto;
+  font-size: 2rem;
+  color: var(--primary-color);
+  padding-block-start: var(--page-padding-block);
+  padding-inline: calc(2*var(--page-padding-inline));
+  transition: all 0.5s ease;
+}
+
+.website-intro > *{
+  opacity: 1;
+  transition: opacity 0.4s ease 0.5s;
+}
+
+body:has(#intro-toggle:checked) > .website-intro > *{
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.website-intro > div{
+  width: fit-content;
+  margin-block: 6.4rem;
+  color: var(--white);
+  line-height: 1.25;
+  backdrop-filter: blur(0.7rem);
+  position: relative;
+  z-index: 1;
+  font-family: "Arial";
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+.website-intro > p{
+  width: fit-content;
+  margin-block: 6.4rem;
+  color: var(--white);
+  line-height: 1.25;
+  backdrop-filter: blur(0.7rem);
+  position: relative;
+  z-index: 1;
+  font-family: "Arial";
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+.website-intro h2{
+  font-size: clamp(8rem, 20vw, 20rem);
+  font-family: "Confluence";
+  line-height: 0.9;
+  color: var(--primary-color);
+  text-shadow:
+    /* Outline Stroke */
+    -0.1rem -0.1rem 0 var(--black),
+    0.1rem -0.1rem 0 var(--black),
+    -0.1rem 0.1rem 0 var(--black),
+    0.1rem 0.1rem 0 var(--black),
+    0 -0.1rem 0 var(--black),
+    0 0.1rem 0 var(--black),
+    -0.1rem 0 0 var(--black),
+    0.1rem 0 0 var(--black),
+    /* Shadow under texts */
+    0 0.6rem 0 var(--lihgtblue); 
+}
+
+.website-intro a{
+  color: var(--black);
+  background-color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.website-intro blockquote{
+  font-size: clamp(2.8rem, 6vw, 8rem);
+  font-family: "Arial";
+  font-weight: 700;
+  margin-block: 2.8rem;
   text-align: center;
-  /* flex-grow: 1; */
-  border: black 0.2rem solid;
-  border-radius: 100%;
+  text-wrap: balance;
+  color: var(--primary-color);
+  line-height: 1.25;
 }
 
-li:first-child{
-  background-color: lightgreen;
+/* Colophon here!-------------- */
+.colophon{
+  margin-block-start: 8rem;
 }
 
-li:nth-child(2){
-  background-color: rgb(180, 234, 244);
+.colophon > span{
+  font-family: "Confluence";
+  font-size: clamp(6rem, 16vw, 20rem);
 }
 
-li:last-child{
-  background-color:rgb(231, 240, 128);
+.Typeface-and-Credits{
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  width: 100%;
+  font-size: 2rem;
+  font-family: 'Arial';
 }
+
+.Typeface-and-Credits > li{
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: start;
+}
+
+.type-list{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: var(--white);
+}
+
+.Colophon-title{
+  white-space: pre-line;
+  /* Make the title take the same space so the type-list and name can align */
+  width: 50%;
+  flex-shrink: 0;
+  font-weight: 700;
+}
+
+.Footer-Logo{
+  display: block;
+  font-size: clamp(15rem, 42vw, 80rem);
+  font-family: 'Confluence';
+  color: var(--primary-color);
+  margin-block-end: clamp(-5rem, -6vw, -2rem);
+  text-shadow:
+    /* Outline Stroke */
+    -0.1rem -0.1rem 0 var(--black),
+    0.1rem -0.1rem 0 var(--black),
+    -0.1rem 0.1rem 0 var(--black),
+    0.1rem 0.1rem 0 var(--black),
+    0 -0.1rem 0 var(--black),
+    0 0.1rem 0 var(--black),
+    -0.1rem 0 0 var(--black),
+    0.1rem 0 0 var(--black),
+    /* Shadow under texts */
+    0 0.6rem 0 var(--lihgtblue); 
+}
+
+.Footer-Credits{
+  font-family: 'Arial';
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  display: flex;
+  justify-content: space-between;
+  margin-block: 2rem;
+}
+
+
+/* h1 and image egg start---------- */
+h1{
+  overflow: clip;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: var(--primary-color);
+  text-shadow:
+    /* Outline Stroke */
+    -0.1rem -0.1rem 0 var(--black),
+    0.1rem -0.1rem 0 var(--black),
+    -0.1rem 0.1rem 0 var(--black),
+    0.1rem 0.1rem 0 var(--black),
+    0 -0.1rem 0 var(--black),
+    0 0.1rem 0 var(--black),
+    -0.1rem 0 0 var(--black),
+    0.1rem 0 0 var(--black),
+    /* Shadow under texts */
+    0 0.6rem 0 var(--black); 
+}
+
+h1 span:first-child {
+  display: block;
+  font-size: clamp(8rem, 26vw, 18rem);
+  font-family: "Cooper Black";
+  line-height: 0.9;
+  color: var(--primary-color);
+  margin-block-end: -8rem;
+}
+
+h1 img{
+  flex: 1 1 0;
+  object-fit: contain;
+  min-height: 0;
+  z-index: 2;
+}
+
+h1 span:last-child {
+  display: block;
+  font-size: clamp(15rem, 44vw, 80rem);
+  font-family: "Confluence";
+  color: var(--primary-color);
+  margin-block-start: -12rem;
+  margin-block-end: clamp(-5rem, -6vw, -2rem);
+}
+

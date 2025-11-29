@@ -1,17 +1,15 @@
-@font-face {
-  font-family: 'CustomFont';
-  src: url(./font/PPNeueMachina-PlainRegular.otf);
-}
+
 
 :root{
   font-size: 62.5%; /* 62.5% of 16px = 10px */
 }
 
 body{
+  /* width: 100vw; */
   overflow-x: clip;
-  background-color: rgb(214, 9, 91);
-  margin-inline:1.4rem;
-  margin-block:1rem;
+  background-color: rgb(255, 255, 255);
+  margin-inline: 1.4rem;
+  margin-block-start:1rem;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
@@ -20,13 +18,13 @@ header{
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  /* gap: 2rem; */
+  gap: 2rem;
   font-size: 1.4rem;
 }
 
 header>a{
-  color:rgb(0, 0, 0);
-  /* background-color: rgb(255, 255, 255); */
+  color:rgb(29, 76, 215);
+  background-color: rgb(255, 255, 255);
   height: 4rem;
   width: 5rem;
   border: 0.1rem solid;
@@ -42,95 +40,105 @@ header>div{
 }
 
 header>div>a{
-  font-weight: 700;
-  color: rgb(181, 10, 104);
-  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  background-color: rgb(29, 76, 215);
   height: 4rem;
   width: 4rem;
+  border: 0.1rem solid;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-header>div>a:not(:nth-child(3)){
-  color: rgb(0, 0, 0);
-  background-color: rgba(255, 255, 255, 0);
-  border: 0.1rem solid rgb(0, 0, 0);
+header>div>a:not(:first-child){
+  color: rgb(29, 76, 215);
+  background-color: rgb(255, 255, 255);
+  border: 0.1rem solid rgb(29, 76, 215);
   border-radius: 50%;
 }
 
 h1{
-  font-family: "CustomFont", sans-serif;
   font-size: clamp(4rem, 10vw, 11rem);
   font-weight: 600;
-  line-height: 1.14;
-  color: #000000;
-  background-color: rgb(255, 255, 255);
-  margin-block: 2rem;
+  color: rgb(29, 76, 215);
+  margin-block: 2.8rem;
+  position: relative;
+  padding-block: 2rem;
+}
+
+h1::after{
+  content: "";
+  display: block;
+  border: 3rem dotted rgb(142, 228, 140);
+  border-radius: 50%;
+  position: absolute;
+  inset: 0;
+  transform: rotate(15deg);
+  mix-blend-mode: multiply;
+
 }
 
 .date-author{
-  color: black;
   font-size: 1.4rem;
-  margin-bottom: 2.8rem;
+  color: rgb(164, 57, 143);
 }
 
 h2{
-  font-family: "CustomFont", sans-serif;
-  line-height: 1.15;
-  font-size: clamp(2.4rem, 6vw, 8rem);
-  font-weight: 600;
-  color: rgb(214, 9, 91);
-  padding-inline-end: 4rem;
-  /* padding-inline-start: 3rem; */
-  padding-block: 1rem;
+  font-size: 2.8rem;
+  line-height: 1;
+  /* color: rgb(150, 54, 239); */
+  margin-block-start: 2.4rem;
+  padding-block-end: 1rem;
+  border-bottom: 2px solid ;
 }
 
-section{
-  margin-inline-end: -2rem;
-  background-color: rgb(255, 255, 255);
+p{
+  font-size: 1.6rem;
+  line-height: 1.3;
+  margin-block-end: 1.4rem;
 }
 
-section p{
-  font-size: 1.8rem;
-  color: rgb(0, 0, 0);
-  margin-block-end: 2.4rem;
-  margin-inline-end: 3.4rem;
+section {
+  border: 0.3rem dotted ;
+  border-radius: 50%;
+  margin-block-end: 2rem;
 }
 
-section a{
-  color: rgb(214, 9, 91);
-  text-decoration: underline;
+section P{
+  padding-inline-start: 2.8rem;
 }
 
-/* #section1{
-  background-color: rgb(69, 196, 100);
+#section1{
+  color: rgb(69, 196, 100);
 
 }
 
 #section2{
-  background-color: rgb(214, 122, 52);
+  color: rgb(214, 122, 52);
 }
 
 #section3{
-  background-color: rgb(95, 88, 231);
+  color: rgb(95, 88, 231);
 }
 
 #section4{
-  background-color: rgb(223, 78, 163);
+  color: rgb(223, 78, 163);
 }
 
 #section5{
-  background-color: rgb(69, 196, 100);
+  color: rgb(69, 196, 100);
 }
 
 #section6{
-  background-color: rgb(214, 122, 52);
-} */
-
-footer{
-  font-size: 1.6rem;
-  color: rgb(0, 0, 0);
-  margin-block: 2.8rem;
+  color: rgb(214, 122, 52);
 }
+
+footer {
+  font-size: 1.4rem;
+  color:  rgb(31, 11, 113);
+  /* border: 0.2rem dotted; */
+  /* border-radius: 50%; */
+}
+
+
