@@ -47,9 +47,8 @@
 
 body {
   width: 100vw;
-  height: 100vh;
   height: 100dvh;
-  background-color: var(--bg-color-top);
+  background-color: var(--bg-color-bottom);
   background-image: linear-gradient(to bottom, var(--bg-color-top) 20%, var(--bg-color-bottom));
   padding-inline: var(--page-padding-inline);
   padding-block-start: var(--page-padding-block);
@@ -253,15 +252,26 @@ body:has(#intro-toggle:checked) > .website-intro{
   right: 0;
   bottom: 0;
   z-index: 4;
-  background-color: var(--intro-bg);
   -webkit-backdrop-filter: blur(4rem);
   backdrop-filter: blur(4rem);
-  mix-blend-mode: darken;
   width: 100vw;
   height: 100vh;
   margin: 0; 
   padding: 0; 
   transition: all 0.5s ease;
+}
+
+/* backdrop-filter and mix-blend-mode can not be together in the same element. so I seperate them */
+.intro-backdrop::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--intro-bg);
+  mix-blend-mode: darken;
+  pointer-events: none;
 }
 
 .intro-pattern {
