@@ -118,18 +118,14 @@ header div.home-button {
 }
 
 .menu-list {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: absolute;
   top: var(--nav-height);
-  height: 88vh;
+  height: 80vh;
   width: 100%;
   background-color: var(--primary-color);
   background-image: url(./src/egg.svg);
   overflow: clip;
-  padding-block: 8rem;
-  padding-inline: 3rem;
+  padding-block: 4rem;
   /* animation */
   transform: scaleY(1);
   transform-origin: top;
@@ -146,6 +142,7 @@ header div.home-button {
 
 .menu-list ul{
   display: flex;
+  padding: 4vh;
   height: 100%;
   flex-grow: 1;
   flex-direction: column;
@@ -154,7 +151,7 @@ header div.home-button {
   z-index: 2;
   opacity: 1;
   /* I make the text come later than bg */
-  transition: opacity 0.3s ease 0.3s;
+  transition: opacity 0.5s ease 0.3s;
 }
 
 .menu-list li{
@@ -171,12 +168,12 @@ header div.home-button {
 }
 
 .menu-number {
-  font-size: 5rem;
+  font-size: 4.2rem;
   font-family: "Confluence";
 }
 
 .menu-title {
-  font-size: 3rem;
+  font-size: 2.6rem;
   font-family: "cooper black";
 }
 
