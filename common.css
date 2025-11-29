@@ -130,6 +130,7 @@ header div.home-button {
   transform: scaleY(1);
   transform-origin: top;
   transition: transform 0.3s ease;
+  border: var(--black) 0.1rem solid;
 }
 
 #menu-toggle:checked + .menu-list {
@@ -142,7 +143,7 @@ header div.home-button {
 
 .menu-list ul{
   display: flex;
-  padding: 2.5vh;
+  padding-inline: 3.5vh;
   height: 100%;
   flex-grow: 1;
   flex-direction: column;
@@ -168,7 +169,7 @@ header div.home-button {
 }
 
 .menu-number {
-  font-size: 4.2rem;
+  font-size: 4rem;
   font-family: "Confluence";
 }
 
