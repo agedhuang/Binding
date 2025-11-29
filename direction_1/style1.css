@@ -20,7 +20,7 @@ header{
   font-size: 1.4rem;
 }
 
-header>a{
+header > a{
   color:rgb(29, 76, 215);
   background-color: rgb(255, 255, 255);
   height: 4rem;
