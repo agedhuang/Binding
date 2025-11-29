@@ -45,6 +45,10 @@
   --nav-height: 4rem;
 }
 
+html{
+  background-color: var(--bg-color-top);
+}
+
 body {
   width: 100vw;
   height: 100dvh;
