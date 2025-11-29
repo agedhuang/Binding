@@ -2,31 +2,31 @@
   font-family: "Arial";
   font-style: normal;
   font-weight: 400;
-  src: url(./font/Arial.ttf);
+  src: url(../font/Arial.ttf);
 }
 
 @font-face {
   font-family: "Arial";
   font-style: normal;
   font-weight: 700;
-  src: url(./font/Arial\ Bold.ttf);
+  src: url(../font/Arial\ Bold.ttf);
 }
 
 @font-face {
   font-family: "Arial";
   font-style: normal;
   font-weight: 900;
-  src: url(./font/Arial\ Black.ttf);
+  src: url(../font/Arial\ Black.ttf);
 }
 
 @font-face {
   font-family: "Confluence";
-  src: url(./font/Elbow\ Sans.ttf);
+  src: url(../font/Elbow\ Sans.ttf);
 }
 
 @font-face {
   font-family: "Cooper Black";
-  src: url(./font/COOPBL.TTF);
+  src: url(../font/COOPBL.TTF);
 }
 
 :root{
