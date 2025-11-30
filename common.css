@@ -112,6 +112,7 @@ header div.home-button {
     0 0.1rem 0 black,
     -0.1rem 0 0 black,
     0.1rem 0 0 black;
+  cursor: pointer;
 }
 
 /* menu start here_____ */
@@ -126,6 +127,7 @@ header div.home-button {
   justify-content: center;
   border-radius: 0.4rem;
   border: var(--black) 0.1rem solid;
+  cursor: pointer;
 }
 
 .menu-list {
@@ -210,6 +212,7 @@ header .eggs-container {
   color: var(--primary-color);
   /* So many layer in here, I have to figure it out with chrome  inspect tool*/
   z-index: 7;
+  cursor: pointer;
 }
 
 header .eggs-container span {
@@ -497,6 +500,7 @@ h1{
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   justify-content: space-between;
   color: var(--primary-color);
   text-shadow:
@@ -516,7 +520,7 @@ h1{
 h1 span:first-child {
   display: block;
   height: fit-content;
-  font-size: clamp(8rem, 26vw, 18rem);
+  font-size: clamp(8rem, 26vw, 10rem);
   font-family: "Cooper Black";
   line-height: 0.9;
   color: var(--primary-color);
@@ -529,9 +533,10 @@ h1 img{
   min-height: 0;
   z-index: 2;
   cursor: pointer;
+  align-self: center;
 }
 
-/* This animation code I got from Animista, a website offer CSS Animation Library code  */
+/* This animation code I got from Animista, a website like CSS Animation Library  */
 h1 img:active {
   -webkit-animation: shake-lr 0.7s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
   animation: shake-lr 0.7s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
@@ -608,10 +613,32 @@ h1 img:active {
 h1 span:last-child {
   display: block;
   height: fit-content;
-  font-size: clamp(15rem, 44vw, 80rem);
+  font-size: clamp(12rem, 44vw, 80rem);
   font-family: "Confluence";
   color: var(--primary-color);
   margin-block-start: clamp(-18rem, -25vw, -6rem);
-  margin-block-end: clamp(-5rem, -6vw, -2rem);
+  margin-block-end: clamp(-12rem, -7vw, -2rem);
+}
+
+
+@media (min-width: 600px) {
+  h1 span:first-child{
+    margin-block-end: clamp(-15rem, -25vw, -6rem);
+    
+  }
+
+  h1 span:last-child{
+    margin-block-start: clamp(-38rem, -35vw, -6rem);
+    font-size: clamp(12rem, 45vw, 80rem);
+  }
+}
+
+
+@media (min-width: 745px) {
+
+  h1 span:last-child{
+    margin-block-start: clamp(-88rem, -45vw, -6rem);
+    font-size: clamp(12rem, 46vw, 80rem);
+  }
 }
 

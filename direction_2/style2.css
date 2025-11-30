@@ -116,6 +116,7 @@ header div.home-button {
     0 0.1rem 0 black,
     -0.1rem 0 0 black,
     0.1rem 0 0 black;
+  cursor: pointer;
 }
 
 /* menu start here_____ */
@@ -146,6 +147,7 @@ header div.home-button {
   transform-origin: top;
   transition: transform 0.3s ease;
   border: var(--black) 0.1rem solid;
+  cursor: pointer;
 }
 
 #menu-toggle:checked + .menu-list {
@@ -214,6 +216,7 @@ header .eggs-container {
   color: var(--primary-color);
   /* So many layer in here, I have to figure it out with chrome  inspect tool*/
   z-index: 7;
+  cursor: pointer;
 }
 
 header .eggs-container span {
