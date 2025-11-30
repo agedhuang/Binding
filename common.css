@@ -528,6 +528,7 @@ h1 img{
   object-fit: contain;
   min-height: 0;
   z-index: 2;
+  cursor: pointer;
 }
 
 /* This animation code I got from Animista, a website offer CSS Animation Library code  */
