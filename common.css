@@ -520,7 +520,7 @@ h1 span:first-child {
   font-family: "Cooper Black";
   line-height: 0.9;
   color: var(--primary-color);
-  margin-block-end: -6rem;
+  margin-block-end: clamp(-18rem, -15vw, -6rem);
 }
 
 h1 img{
@@ -530,13 +530,46 @@ h1 img{
   z-index: 2;
 }
 
+/* This animation code I got from Animista, a website offer CSS Animation Library code  */
+h1 img:active {
+  animation: shake-lr 0.7s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+@keyframes shake-lr {
+  0%,
+  100% {
+    transform: rotate(0deg);
+    transform-origin: 50% 50%;
+  }
+  10% {
+    transform: rotate(8deg);
+  }
+  20%,
+  40%,
+  60% {
+    transform: rotate(-10deg);
+  }
+  30%,
+  50%,
+  70% {
+    transform: rotate(10deg);
+  }
+  80% {
+    transform: rotate(-8deg);
+  }
+  90% {
+    transform: rotate(8deg);
+  }
+}
+
+
 h1 span:last-child {
   display: block;
   height: fit-content;
   font-size: clamp(15rem, 44vw, 80rem);
   font-family: "Confluence";
   color: var(--primary-color);
-  margin-block-start: -9rem;
+  margin-block-start: clamp(-18rem, -25vw, -6rem);
   margin-block-end: clamp(-5rem, -6vw, -2rem);
 }
 

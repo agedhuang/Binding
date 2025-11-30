@@ -56,7 +56,7 @@ html{
 }
 
 body {
-  width: 100vw;
+  width: 100%;
   min-height: 100vh; 
   min-height: 100dvh;
   background-color: var(--article-theme-color-bg);
@@ -194,13 +194,13 @@ header div.home-button {
 }
 
 /* When the menu show, other stuff blur */
-body:has(#menu-toggle:not(:checked)) > h1 {
+/* body:has(#menu-toggle:not(:checked)) > .main-article {
   filter: blur(5px);
 }
 
-body:has(#menu-toggle) > h1 {
+body:has(#menu-toggle) > .main-article {
   transition: filter 0.3s ease;
-}
+} */
 
 /* Menu end here_________ */
 
@@ -503,7 +503,6 @@ body:has(#intro-toggle:checked) > .website-intro > *{
 /* top H2 strart--------------  */
 .main-article {
   margin-block-start: calc(var(--nav-height) + 2.6rem);
-
 }
 
 .title-layer {
