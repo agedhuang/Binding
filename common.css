@@ -296,7 +296,7 @@ body:has(#intro-toggle:checked) > header > nav{
 }
 
 /* backdrop-filter and mix-blend-mode can not be together in the same element. so I seperate them */
-.intro-backdrop::before {
+/* .intro-backdrop::before {
   content: "";
   position: absolute;
   top: 0;
@@ -306,7 +306,7 @@ body:has(#intro-toggle:checked) > header > nav{
   background-color: var(--intro-bg);
   mix-blend-mode: darken;
   pointer-events: none;
-}
+} */
 
 .intro-pattern {
   position: fixed;
