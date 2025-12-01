@@ -350,6 +350,7 @@ body:has(#intro-toggle:checked) > header > nav{
 .website-intro > *{
   opacity: 1;
   transition: opacity 0.4s ease 0.5s;
+  margin-inline: auto;
 }
 
 body:has(#intro-toggle:checked) > .website-intro > *{
@@ -358,7 +359,6 @@ body:has(#intro-toggle:checked) > .website-intro > *{
 }
 
 .website-intro > div{
-  width: fit-content;
   margin-block: 3.4rem;
   color: var(--white);
   line-height: 1.4;
@@ -372,7 +372,6 @@ body:has(#intro-toggle:checked) > .website-intro > *{
 }
 
 .website-intro > p{
-  width: fit-content;
   margin-block: 3.4rem;
   color: var(--white);
   line-height: 1.4;
@@ -429,6 +428,7 @@ body:has(#intro-toggle:checked) > .website-intro > *{
 .colophon > span{
   font-family: "Confluence";
   font-size: clamp(6rem, 16vw, 20rem);
+  color: var(--primary-color);
 }
 
 .Typeface-and-Credits{
@@ -460,11 +460,21 @@ body:has(#intro-toggle:checked) > .website-intro > *{
   width: 50%;
   flex-shrink: 0;
   font-weight: 700;
+  color: var(--primary-color);
+}
+
+.website-intro > *:not(Footer) {
+  max-width: 78rem; 
+}
+
+.footer-wrapper {
+  max-width: 150rem; 
+  margin-inline: auto; 
 }
 
 .Footer-Logo{
   display: block;
-  font-size: clamp(15rem, 42vw, 80rem);
+  font-size: clamp(15rem, 42vw, 71rem);
   font-family: 'Confluence';
   color: var(--primary-color);
   margin-block-end: clamp(-5rem, -6vw, -2rem);
