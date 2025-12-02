@@ -727,8 +727,8 @@ h3{
 }
 
 .body-text:target > *:not(.article-menu) {
-  animation: fade-in-up 1.2s ease-out forwards;
-  will-change: opacity;
+  /* animation: fade-in-up 1.2s ease-out forwards; */
+  /* will-change: opacity; */
 }
 
 /* .body-text:target > h3 {
