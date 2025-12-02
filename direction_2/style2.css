@@ -518,11 +518,13 @@ body:has(#intro-toggle:checked) > .website-intro > *{
   display: flex;
   color: var(--primary-color);
   align-items: center;
+  position: relative;
+  z-index: 3;
 }
 
 .title-layer > h2 >div:first-child{
   font-family: 'Confluence';
-  font-size: clamp(6rem, 16vw, 20rem);
+  font-size: clamp(6rem, 16vw, 12rem);
   /* Text Box trim! */
   text-box: trim-both cap alphabetic;
   width: var(--home-button-width);
@@ -531,7 +533,7 @@ body:has(#intro-toggle:checked) > .website-intro > *{
 
 .title-layer > h2 >div:last-child{
   font-family: 'Cooper Black';
-  font-size: clamp(2.2rem, 6vw, 7rem);
+  font-size: clamp(2.2rem, 6vw, 5rem);
   font-weight: 700;
 }
 
@@ -579,7 +581,7 @@ body:has(#intro-toggle:checked) > .website-intro > *{
 }
 
 .article-title > h1{
-  font-size: clamp(3rem, 10vw, 20rem);
+  font-size: clamp(3rem, 10vw, 8rem);
   font-family: "Arial";
   font-weight: 900;
   line-height: 1.3;
@@ -688,11 +690,15 @@ body:has(#intro-toggle:checked) > .website-intro > *{
 
 /* Media Queries ------------------- */
 
-@media (min-width: 600px) {
+@media (min-width: 580px) {
+ :root{
+    --home-button-width:16rem;
+  }
+
   .menu-list li > a{
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 5rem;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 5rem;
   }
 
   .menu-number{
@@ -707,20 +713,22 @@ body:has(#intro-toggle:checked) > .website-intro > *{
     font-size: clamp(15rem, 45vw, 72rem);
   }
 
+  .article-title > h1{
+    font-size: clamp(4rem, 8vw, 8rem);
+  }
+
 }
 
 
 
 @media (min-width: 768px) {
+  
   :root{
-  --nav-height: 5rem;
+    --nav-height: 5rem;
+    --page-padding-inline: 3.4rem;
+    --page-padding-block: 3rem;
   }
 
-
-  header{
-    padding-inline: calc(2rem + var(--page-padding-inline));
-    padding-block: calc(1rem + var(--page-padding-block));
-  }
 
   header .eggs-container #top-right {
     height: 5rem;
@@ -731,19 +739,19 @@ body:has(#intro-toggle:checked) > .website-intro > *{
   }
 
   .Footer-Logo{
-  text-shadow:
-    /* Outline Stroke */
-    -0.1rem -0.1rem 0 var(--black),
-    0.1rem -0.1rem 0 var(--black),
-    -0.1rem 0.1rem 0 var(--black),
-    0.1rem 0.1rem 0 var(--black),
-    0 -0.1rem 0 var(--black),
-    0 0.1rem 0 var(--black),
-    -0.1rem 0 0 var(--black),
-    0.1rem 0 0 var(--black),
-    /* Shadow under texts */
-    0 1.5rem 0 var(--lihgtblue); 
-}
+    text-shadow:
+      /* Outline Stroke */
+      -0.1rem -0.1rem 0 var(--black),
+      0.1rem -0.1rem 0 var(--black),
+      -0.1rem 0.1rem 0 var(--black),
+      0.1rem 0.1rem 0 var(--black),
+      0 -0.1rem 0 var(--black),
+      0 0.1rem 0 var(--black),
+      -0.1rem 0 0 var(--black),
+      0.1rem 0 0 var(--black),
+      /* Shadow under texts */
+      0 1.5rem 0 var(--lihgtblue); 
+  }
 
 
 }
