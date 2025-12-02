@@ -696,6 +696,9 @@ body:has(#intro-toggle:checked) > .website-intro > *{
   border-top-left-radius: 3rem;
   border-top-right-radius: 3rem;
   padding-block: 4rem;
+  /* Fix Safari flicker */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
 h3{
