@@ -737,11 +737,11 @@ h3{
 
 @keyframes fade-in-up {
   0% {
-    opacity: 0;
+    opacity: 0.01; /* Avoid 0 to prevent layer removal */
   }
 
   25%{
-    opacity: 0;
+    opacity: 0.01;
   }
 
   100% {
