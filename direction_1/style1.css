@@ -716,6 +716,7 @@ h3{
   align-items: center;
   text-align: center;
   text-wrap: balance;
+  z-index: 1;
 }
 
 .body-text {
@@ -723,7 +724,7 @@ h3{
 }
 
 .body-text:target > *:not(.article-menu) {
-  animation: fade-in-up 1.1s ease-out forwards;
+  animation: fade-in-up 1.2s ease-out forwards;
   will-change: opacity;
 }
 
