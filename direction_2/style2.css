@@ -35,7 +35,7 @@
   --black:#181818;
   --white:#FFF9F2;
   --article-intro-text-color:#F2FFC2;
-  --intro-bg:#00384763;
+  --intro-bg:#40404063;
   --menu-list-grey: #2c2c2c;
   --lihgtblue:#00aeff;
   --article-theme-color-bg:#691747;
@@ -123,7 +123,7 @@ header div.home-button {
 
 .menu {
   background-color: var(--primary-color);
-  width: 40vw;
+  width: clamp(12rem, 40vw, 40rem);
   height: var(--nav-height);
   color: var(--black);
   display: flex;
@@ -141,7 +141,7 @@ header div.home-button {
   background-color: var(--primary-color);
   background-image: url(../src/egg.svg);
   overflow: clip;
-  padding-block: 4rem;
+  padding-block: clamp(4rem, 8vw, 8rem);
   /* animation */
   transform: scaleY(1);
   transform-origin: top;
@@ -160,7 +160,7 @@ header div.home-button {
 
 .menu-list ul{
   display: flex;
-  padding-inline: 3.5vh;
+  padding-inline: clamp(2rem, 5vw, 7rem);
   height: 100%;
   flex-grow: 1;
   flex-direction: column;
@@ -172,11 +172,12 @@ header div.home-button {
   transition: opacity 0.5s ease 0.3s;
 }
 
-.menu-list li{
+.menu-list li > a{
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
 }
+
 
 .menu-list li div{
   display: inline-block;
@@ -186,12 +187,12 @@ header div.home-button {
 }
 
 .menu-number {
-  font-size: 4rem;
+  font-size: clamp(4rem, 7vw, 6.4rem);
   font-family: "Confluence";
 }
 
 .menu-title {
-  font-size: 2.6rem;
+  font-size: clamp(2.6rem, 5vw, 3.4rem);
   font-family: "cooper black";
 }
 
@@ -303,7 +304,7 @@ body:has(#intro-toggle:checked) > header > nav{
 }
 
 /* backdrop-filter and mix-blend-mode can not be together in the same element. so I seperate them */
-/* .intro-backdrop::before {
+.intro-backdrop::before {
   content: "";
   position: absolute;
   top: 0;
@@ -313,7 +314,7 @@ body:has(#intro-toggle:checked) > header > nav{
   background-color: var(--intro-bg);
   mix-blend-mode: darken;
   pointer-events: none;
-} */
+}
 
 .intro-pattern {
   position: fixed;
@@ -358,30 +359,18 @@ body:has(#intro-toggle:checked) > .website-intro > *{
   transition: opacity 0.4s ease;
 }
 
-.website-intro > div{
-  margin-block: 3.4rem;
-  color: var(--white);
-  line-height: 1.4;
-  -webkit-backdrop-filter: blur(0.7rem);
-  backdrop-filter: blur(0.7rem);
-  position: relative;
-  z-index: 1;
-  font-family: "Arial";
-  font-weight: 400;
-  font-size: 2.15rem;
-}
 
 .website-intro > p{
   margin-block: 3.4rem;
   color: var(--white);
-  line-height: 1.4;
+  line-height: 1.25;
   -webkit-backdrop-filter: blur(0.7rem);
   backdrop-filter: blur(0.7rem);
   position: relative;
   z-index: 1;
   font-family: "Arial";
   font-weight: 400;
-  font-size: 2.15rem;
+  font-size: 2rem;
 }
 
 .website-intro h2{
@@ -692,4 +681,69 @@ body:has(#intro-toggle:checked) > .website-intro > *{
   border-top-left-radius: 3rem;
   border-top-right-radius: 3rem;
   padding-block: 4rem;
+}
+
+
+
+
+/* Media Queries ------------------- */
+
+@media (min-width: 600px) {
+  .menu-list li > a{
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 5rem;
+  }
+
+  .menu-number{
+    text-box: trim-both cap alphabetic;
+  }
+
+  .menu-title{
+    text-box: trim-both cap alphabetic;
+  }
+
+  .Footer-Logo{
+    font-size: clamp(15rem, 45vw, 72rem);
+  }
+
+}
+
+
+
+@media (min-width: 768px) {
+  :root{
+  --nav-height: 5rem;
+  }
+
+
+  header{
+    padding-inline: calc(2rem + var(--page-padding-inline));
+    padding-block: calc(1rem + var(--page-padding-block));
+  }
+
+  header .eggs-container #top-right {
+    height: 5rem;
+  }
+
+  .website-intro blockquote {
+    line-height: 1.2;
+  }
+
+  .Footer-Logo{
+  text-shadow:
+    /* Outline Stroke */
+    -0.1rem -0.1rem 0 var(--black),
+    0.1rem -0.1rem 0 var(--black),
+    -0.1rem 0.1rem 0 var(--black),
+    0.1rem 0.1rem 0 var(--black),
+    0 -0.1rem 0 var(--black),
+    0 0.1rem 0 var(--black),
+    -0.1rem 0 0 var(--black),
+    0.1rem 0 0 var(--black),
+    /* Shadow under texts */
+    0 1.5rem 0 var(--lihgtblue); 
+}
+
+
 }
