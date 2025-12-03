@@ -114,7 +114,13 @@ header div.home-button {
     -0.1rem 0 0 black,
     0.1rem 0 0 black;
   cursor: pointer;
+  transition: border-radius 0.3s ease;
 }
+
+header div.home-button:hover {
+  border-radius: 0.4rem;
+}
+
 
 /* menu start here_____ */
 
@@ -129,6 +135,11 @@ header div.home-button {
   border-radius: 0.4rem;
   border: var(--black) 0.1rem solid;
   cursor: pointer;
+  transition: border-radius 0.3s ease;
+}
+
+.menu:hover {
+  border-radius: 7rem;
 }
 
 .menu-list {
@@ -322,7 +333,7 @@ body:has(#intro-toggle:checked) > header > nav{
   width: 100vw;
   height: 100vh;
   height: 100dvh;
-  background-image: url(./src/egg.svg);
+  /* background-image: url(./src/egg.svg); */
   transition: all 0.5s ease;
 }
 
@@ -370,7 +381,7 @@ body:has(#intro-toggle:checked) > .website-intro > *{
 }
 
 .website-intro h2{
-  font-size: clamp(8rem, 20vw, 20rem);
+  font-size: clamp(8rem, 20vw, 15rem);
   font-family: "Confluence";
   line-height: 1;
   color: var(--primary-color);
@@ -396,7 +407,7 @@ body:has(#intro-toggle:checked) > .website-intro > *{
 }
 
 .website-intro blockquote{
-  font-size: clamp(2.8rem, 6vw, 8rem);
+  font-size: clamp(1.8rem, 5.4vw, 4.4rem);
   font-family: "Arial";
   font-weight: 700;
   margin-block: 4rem;

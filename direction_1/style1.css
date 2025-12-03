@@ -122,6 +122,11 @@ header div.home-button {
     -0.1rem 0 0 black,
     0.1rem 0 0 black;
   cursor: pointer;
+  transition: border-radius 0.3s ease;
+}
+
+header div.home-button:hover {
+  border-radius: 0.4rem;
 }
 
 /* menu start here_____ */
@@ -137,6 +142,11 @@ header div.home-button {
   border-radius: 0.4rem;
   border: var(--black) 0.1rem solid;
   cursor: pointer;
+  transition: border-radius 0.3s ease;
+}
+
+.menu:hover {
+  border-radius: 7rem;
 }
 
 .menu-list {
@@ -331,7 +341,7 @@ body:has(#intro-toggle:checked) > header > nav{
   width: 100%;
   height: 100vh;
   height: 100dvh;
-  background-image: url(../src/egg.svg);
+  /* background-image: url(../src/egg.svg); */
   transition: all 0.5s ease;
 }
 
@@ -873,6 +883,26 @@ blockquote > svg > path{
   padding-inline: 0.4rem;
   padding-block: 0.1rem;
   border-radius: 0.3rem;
+}
+
+@keyframes scroll-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    /* filter: blur(0);  */
+  }
+}
+
+
+.body-text p{
+  animation: scroll-reveal 1s linear both;
+  /* CSS new feature: Scroll-driven animation */
+  animation-timeline: view();
+  animation-range: entry 5% entry 50%;
 }
 
 .body-text p > a{
