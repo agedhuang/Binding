@@ -117,9 +117,6 @@ header div.home-button {
   transition: border-radius 0.3s ease;
 }
 
-header div.home-button:hover {
-  border-radius: 0.4rem;
-}
 
 
 /* menu start here_____ */
@@ -138,17 +135,15 @@ header div.home-button:hover {
   transition: border-radius 0.3s ease;
 }
 
-.menu:hover {
-  border-radius: 7rem;
-}
 
 .menu-list {
   position: absolute;
   top: var(--nav-height);
   height: 74vh;
+  max-height: 60rem;
   width: 100%;
   background-color: var(--primary-color);
-  background-image: url(./src/egg.svg);
+  /* background-image: url(./src/egg.svg); */
   overflow: clip;
   padding-block: clamp(4rem, 8vw, 8rem);
   /* animation */
@@ -377,7 +372,7 @@ body:has(#intro-toggle:checked) > .website-intro > *{
   z-index: 1;
   font-family: "Arial";
   font-weight: 400;
-  font-size: 2rem;
+  font-size: clamp(2rem, 2.6vw, 2.6rem);
 }
 
 .website-intro h2{
@@ -407,7 +402,7 @@ body:has(#intro-toggle:checked) > .website-intro > *{
 }
 
 .website-intro blockquote{
-  font-size: clamp(1.8rem, 5.4vw, 4.4rem);
+  font-size: clamp(1.8rem, 6vw, 4.4rem);
   font-family: "Arial";
   font-weight: 700;
   margin-block: 4rem;
@@ -644,6 +639,17 @@ h1 span:last-child {
 /* Media Queries Start----------- */
 /* Media Queries Start----------- */
 /* Media Queries Start----------- */
+
+@media (hover: hover) {
+  .menu:hover {
+    border-radius: 7rem;
+  }
+
+  header div.home-button:hover {
+    border-radius: 0.4rem;
+  }
+}
+
 
 @media (min-width: 600px) {
   h1 span:first-child{
