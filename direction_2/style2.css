@@ -45,10 +45,10 @@
   --intro-bg:#40404063;
   --menu-list-grey: #2c2c2c;
   --lihgtblue:#00aeff;
-  --article-theme-color-bg:#691747;
-  --article-darkegg-bg-color:#420029;
-  --article-theme-color-light:#FF3D3D;
-  --article-title-shadow-color:#840202;
+  --article-theme-color-bg:#650f41;
+  --article-darkegg-bg-color:#42002f;
+  --article-theme-color-light:#ff3a3a;
+  --article-title-shadow-color:#27000a;
   --article-side-contrast-color:#FF3D3D;
   --page-padding-block: 2rem;
   --page-padding-inline: 1.4rem;
@@ -124,7 +124,7 @@ header div.home-button {
     -0.1rem 0 0 black,
     0.1rem 0 0 black;
   cursor: pointer;
-  transition: border-radius 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 
@@ -140,7 +140,7 @@ header div.home-button {
   justify-content: center;
   border-radius: 0.4rem;
   border: var(--black) 0.1rem solid;
-  transition: border-radius 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .menu-list {
@@ -159,6 +159,7 @@ header div.home-button {
   transition: transform 0.3s ease;
   border: var(--black) 0.1rem solid;
   cursor: pointer;
+  border-radius: 0.4rem;
 }
 
 #menu-toggle:checked + .menu-list {
@@ -180,7 +181,7 @@ header div.home-button {
   z-index: 2;
   opacity: 1;
   /* I make the text show up later than bg */
-  transition: opacity 0.5s ease 0.3s;
+  transition: opacity 0.5s ease 0.38s;
 }
 
 .menu-list li > a{
@@ -229,6 +230,7 @@ header .eggs-container {
   /* So many layer in here, I have to figure it out with chrome  inspect tool*/
   z-index: 7;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 header .eggs-container span {
@@ -567,10 +569,11 @@ body:has(#intro-toggle:checked) > .website-intro > *{
 .title-border{
   display: flex;
   justify-content: space-between;
+  gap: clamp(2rem, 5vw, 8rem);
 }
 
 .title-border > div{
-  width: 45%;
+  flex-grow: 1;
   height: 1rem;
   background-color: var(--article-theme-color-light);
   border-radius: 8rem;
@@ -578,15 +581,6 @@ body:has(#intro-toggle:checked) > .website-intro > *{
   box-shadow: var(--article-title-shadow-color) 0 0.3rem ;
 }
 
-/* .title-border > div:first-child{
-  background-color: var(--article-theme-color-light);
-  border-radius: 8rem;
-}
-
-.title-border > div:last-child{
-  background-color: var(--article-side-contrast-color);
-  border-radius: 8rem;
-} */
 
 #title-bottom-border{
   transform: scaleX(-1);
@@ -596,7 +590,7 @@ body:has(#intro-toggle:checked) > .website-intro > *{
   font-size: clamp(3rem, 10vw, 8rem);
   font-family: "Arial";
   font-weight: 900;
-  line-height: 1.3;
+  line-height: 1.4;
   text-align: center;
   text-shadow:
     /* Outline Stroke */
@@ -778,7 +772,7 @@ h3{
 }
 
 .article-content blockquote{
-  font-size: clamp(1.8rem, 6vw, 4.4rem);
+  font-size: clamp(1.8rem, 6.2vw, 4.4rem);
   font-family: "Arial";
   font-weight: 700;
   text-transform: capitalize;
@@ -806,7 +800,7 @@ h3{
     -0.05rem 0 0 var(--black),
     0.05rem 0 0 var(--black),
     /* Shadow under texts */
-    0 0.3rem 0 var(--article-title-shadow-color); 
+    0 0.25rem 0 var(--article-title-shadow-color); 
 }
 
 blockquote > svg{
@@ -919,11 +913,27 @@ p.italic-text{
 @media (hover: hover) {
   .menu:hover {
     border-radius: 7rem;
+    box-shadow: 0 0.4rem var(--black);
   }
 
   header div.home-button:hover {
     border-radius: 0.4rem;
+    box-shadow: 0 0.4rem var(--black);
   }
+
+  .eggs-container:hover{
+    transform: scale(1.10) rotate(10deg);
+  }
+
+    div.menu-list li:hover  div{
+    color: var(--lihgtblue);
+  }
+
+  .article-menu li:hover{
+    color: var(--black);
+    border-block-end: var(--black) 0.15rem solid;
+  }
+
 }
 
 
@@ -1034,7 +1044,9 @@ p.italic-text{
     -0.05rem 0 0 var(--black),
     0.05rem 0 0 var(--black),
     /* Shadow under texts */
-    0 0.4rem 0 var(--article-title-shadow-color);
+    0 0.35rem 0 var(--article-title-shadow-color);
+
+    line-height: 1.3;
   }
 
   blockquote > svg {
@@ -1054,35 +1066,13 @@ p.italic-text{
     margin-block: 4rem;
   }
 
-  .article-title > h1{
-    text-shadow:
-    /* Outline Stroke */
-    -0.05rem -0.05rem 0 var(--black),
-    0.05rem -0.05rem 0 var(--black),
-    -0.05rem 0.05rem 0 var(--black),
-    0.05rem 0.05rem 0 var(--black),
-    0 -0.05rem 0 var(--black),
-    0 0.05rem 0 var(--black),
-    -0.05rem 0 0 var(--black),
-    0.05rem 0 0 var(--black),
-    /* Shadow under texts */
-    0 0.8rem 0 var(--article-title-shadow-color);
+  .title-border > div{
+    height: 1.4rem;
+    box-shadow: var(--article-title-shadow-color) 0 0.4rem;
   }
 
-  .article-content blockquote{
-    text-shadow:
-    /* Outline Stroke */
-    -0.05rem -0.05rem 0 var(--black),
-    0.05rem -0.05rem 0 var(--black),
-    -0.05rem 0.05rem 0 var(--black),
-    0.05rem 0.05rem 0 var(--black),
-    0 -0.05rem 0 var(--black),
-    0 0.05rem 0 var(--black),
-    -0.05rem 0 0 var(--black),
-    0.05rem 0 0 var(--black),
-    /* Shadow under texts */
-    0 0.5rem 0 var(--article-title-shadow-color); 
-    line-height: 1.3;
+  .date-author{
+    font-size: 2.4rem;
   }
 
   .Content-Footer-Logo{

@@ -114,7 +114,7 @@ header div.home-button {
     -0.1rem 0 0 black,
     0.1rem 0 0 black;
   cursor: pointer;
-  transition: border-radius 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 
@@ -132,7 +132,7 @@ header div.home-button {
   border-radius: 0.4rem;
   border: var(--black) 0.1rem solid;
   cursor: pointer;
-  transition: border-radius 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 
@@ -151,6 +151,7 @@ header div.home-button {
   transform-origin: top;
   transition: transform 0.3s ease;
   border: var(--black) 0.1rem solid;
+  border-radius: 0.4rem;
 }
 
 #menu-toggle:checked + .menu-list {
@@ -172,7 +173,7 @@ header div.home-button {
   z-index: 2;
   opacity: 1;
   /* I make the text show up later than bg */
-  transition: opacity 0.5s ease 0.3s;
+  transition: opacity 0.5s ease 0.38s;
 }
 
 .menu-list li > a{
@@ -220,6 +221,7 @@ header .eggs-container {
   /* So many layer in here, I have to figure it out with chrome  inspect tool*/
   z-index: 7;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 header .eggs-container span {
@@ -643,10 +645,20 @@ h1 span:last-child {
 @media (hover: hover) {
   .menu:hover {
     border-radius: 7rem;
+    box-shadow: 0 0.4rem var(--black);
   }
 
   header div.home-button:hover {
     border-radius: 0.4rem;
+    box-shadow: 0 0.4rem var(--black);
+  }
+
+  .eggs-container:hover{
+    transform: scale(1.10) rotate(10deg);
+  }
+
+  div.menu-list li:hover  div{
+    color: var(--lihgtblue);
   }
 }
 
