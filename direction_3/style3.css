@@ -539,7 +539,7 @@ body:has(#intro-toggle:checked) > .website-intro > *{
 
 .sticker{
   position: fixed;
-  bottom: 25vh;
+  bottom: 23vh;
   right: 7vw;
   width: clamp(9rem,12vw,40rem);
   z-index: 1;
