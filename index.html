@@ -15,7 +15,7 @@
   <header>
     <nav>
       <div class="home-button"><a href="./index.html">Home</a></div>
-      <label for="menu-toggle" class="menu">Menu</label>
+      <label for="menu-toggle" class="menu">Article</label>
       <input type="checkbox" id="menu-toggle" checked>
       <div class="menu-list">
         <ul>
@@ -52,8 +52,14 @@
   </header>
 
   <h1>
-    <span>Design<br>for</span>
-    <img src="./src/egg.webp" alt="huge egg photo with colorful sticker on it">
+    <span>Design <br>for</span>
+    <video autoplay loop muted playsinline poster="./src/egg.webp">
+      <!-- Safari (iOS/macOS) HEVC with Alpha -->
+      <source src="./src/Egg video.mov" type='video/quicktime; codecs="hvc1"'>
+       <!-- Chrome/Android/Firefox WebM with Alpha -->
+      <source src="./src/Egg video.webm" type="video/webm">
+      <img src="./src/egg.webp" alt="huge egg photo with colorful sticker on it">
+    </video>
     <span>All</span>
   </h1>
 

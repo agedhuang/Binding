@@ -411,6 +411,8 @@ body:has(#intro-toggle:checked) > .website-intro > *{
   text-wrap: balance;
   color: var(--primary-color);
   line-height: 1.35;
+  -webkit-backdrop-filter: blur(0.7rem);
+  backdrop-filter: blur(0.7rem);
 }
 
 /* Colophon here!-------------- */
@@ -537,7 +539,7 @@ h1 span:first-child {
   margin-block-end: clamp(-18rem, -15vw, -6rem);
 }
 
-h1 img{
+h1 video{
   flex: 1 1 0;
   object-fit: contain;
   min-height: 0;
@@ -546,11 +548,7 @@ h1 img{
   align-self: center;
 }
 
-/* This animation code I got from Animista, a website like CSS Animation Library  */
-h1 img:active {
-  -webkit-animation: shake-lr 0.7s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-  animation: shake-lr 0.7s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-}
+
 
 .landing-footer{
   display: none;
@@ -704,9 +702,13 @@ h1 span:last-child {
 }
 
   body{
-    background-image: linear-gradient(to bottom, var(--bg-color-top), var(--bg-color-bottom) 80%);
+    background-image: linear-gradient(to bottom, var(--bg-color-top), var(--bg-color-bottom) 70%);
     padding-inline-start: calc(2rem + var(--page-padding-inline));
     padding-inline-end: calc(2rem + var(--page-padding-inline));
+  }
+
+  h1 > span:first-child br {
+    display: none;
   }
 
   header{
@@ -738,34 +740,46 @@ h1 span:last-child {
 }
 
   h1{
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items:flex-start;
     position: relative;
+    flex-grow: 1;
+    gap: 10rem;
   }
 
   h1 span:first-child {
-  font-size: clamp(4rem, 9vw, 13rem);
+  font-size: clamp(4rem, 7vw, 20rem);
   margin-block-end: 0;
   flex: 1;
   /* margin-inline-end: clamp(-6rem, -4vw, -3rem); */
   text-box: trim-both cap alphabetic;
   z-index: 4;
   pointer-events: none;
+  padding-top: 3rem;
   /* padding-inline-start: 2vw; */
   }
 
-  h1 img {
+  h1 video {
     position: absolute;
     left: 50%;
+    /* top: 12vh; */
     transform: translateX(-52%);
-    width: auto;
+    height: 80vh;
     /* max-width: 40%; 
     max-height: 90%; */
-    height: auto;
+    /* height: auto; */
     object-fit: contain;
     margin-inline: auto; 
     margin-block-end: 2rem;
-    padding-block: 2rem;
+    /* padding-block: 2rem; */
+    z-index: 5;
+    transition: all 0.3s ease;
+  }
+
+  h1 video:hover{
+    z-index: 4;
+    height: 78vh;
   }
 
   @-webkit-keyframes shake-lr {
@@ -836,7 +850,7 @@ h1 span:last-child {
 }
 
   h1 span:last-child {
-    font-size: clamp(5rem, 15vw, 22rem);
+    font-size: clamp(15rem, 45vw, 90rem);
     margin-block-start: 0;
     margin-block-end: 0;
     text-align: right;
@@ -845,8 +859,22 @@ h1 span:last-child {
     z-index: 4;
     pointer-events: none;
     text-box: trim-both cap alphabetic;
-    
+    padding-bottom: 5rem;
+    text-shadow:
+    /* Outline Stroke */
+    -0.1rem -0.1rem 0 var(--black),
+    0.1rem -0.1rem 0 var(--black),
+    -0.1rem 0.1rem 0 var(--black),
+    0.1rem 0.1rem 0 var(--black),
+    0 -0.1rem 0 var(--black),
+    0 0.1rem 0 var(--black),
+    -0.1rem 0 0 var(--black),
+    0.1rem 0 0 var(--black),
+    /* Shadow under texts */
+    0 1rem 0 var(--black); 
   }
+
+   
 
   .landing-footer{
     display: flex;
