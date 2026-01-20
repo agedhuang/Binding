@@ -551,7 +551,7 @@ body:has(#intro-toggle:checked) > .website-intro > *{
   position: absolute;
   top: 5vh;
   right: 3vw;
-  width: clamp(14rem,20vw,40rem);
+  width: clamp(9rem,12vw,40rem);
   z-index: 4;
   transform: rotate(-20deg);
   cursor: grab;
