@@ -114,5 +114,18 @@
       </div>
     </footer>
   </article>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const video = document.querySelector('video');
+      if (video) {
+        // Double-check muted property to satisfy Safari's autoplay policy
+        video.muted = true;
+        // Attempt to play programmatically
+        video.play().catch(error => {
+          console.log("Autoplay blocked/failed:", error);
+        });
+      }
+    });
+  </script>
 </body>
 </html>
