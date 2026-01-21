@@ -793,6 +793,10 @@ h3{
   margin-block: 2.4rem;
 }
 
+.article-images{
+  width: 100%;
+}
+
 @keyframes focus-in {
   0% {
     filter: blur(10px);
@@ -1017,6 +1021,8 @@ p.italic-text{
 
 
 @media (min-width: 768px) {
+
+
   :root{
   --nav-height: 5rem;
   --page-padding-inline: 3.4rem;
@@ -1077,6 +1083,7 @@ p.italic-text{
 
 
 @media (min-width: 1024px) {
+
   .article-intro{
     padding-block-end: calc(var(--page-padding-block) + 10rem);
   }
@@ -1141,6 +1148,15 @@ p.italic-text{
     grid-column: 4/10;
     margin-block: 1.2rem;
     font-size: clamp(1.8rem, 2.2vw, 2.4rem);
+  }
+
+  .article-images{
+    grid-column: 4/10;
+    margin-block: 4rem;
+  }
+
+  .big-image{
+    grid-column: 4/13;
   }
 
   .article-content blockquote{

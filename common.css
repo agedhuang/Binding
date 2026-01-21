@@ -43,6 +43,7 @@
   --page-padding-inline: 1rem;
   --text-outside-stroke: 0.1rem;
   --nav-height: 4rem;
+  --home-button-width:11rem;
 }
 
 html{
@@ -95,7 +96,7 @@ header nav {
 
 header div.home-button {
   background-color: var(--white);
-  width: 11rem;
+  width: var(--home-button-width);
   height: var(--nav-height);
   border-radius: 7rem;
   border: var(--black) 0.1rem solid;
@@ -662,6 +663,11 @@ h1 span:last-child {
 
 
 @media (min-width: 600px) {
+
+  :root{
+    --home-button-width:16rem;
+  }
+
   h1 span:first-child{
     margin-block-end: clamp(-7rem, -25vw, -6rem);
     
@@ -673,9 +679,9 @@ h1 span:last-child {
   }
 
   .menu-list li > a{
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 5rem;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 5rem;
   }
 
   .menu-number{

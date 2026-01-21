@@ -815,6 +815,11 @@ li.current-section{
   margin-block: 2.4rem;
 }
 
+
+.article-images{
+  width: 100%;
+}
+
 @keyframes focus-in {
   0% {
     filter: blur(10px);
@@ -1147,6 +1152,11 @@ span.highlight-text{
     grid-column: 4/10;
     margin-block: 1.2rem;
     font-size: clamp(1.8rem, 2.2vw, 2.4rem);
+  }
+
+  .article-images{
+    grid-column: 4/10;
+    margin-block-start: 4rem;
   }
 
   .article-content blockquote{
